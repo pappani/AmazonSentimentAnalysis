@@ -2,16 +2,13 @@ import json
 import random
 
 data = []
-file_name = 'Electronics_5'
-with open(f'./{file_name}.json') as f:
+with open(f'./Electronics_5.json') as f:
 	for line in f:
 		review = json.loads(line)
 		data.append(review)
 
-final_data = random.sample(data, 75000)
-
-print(len(final_data))
-
-with open(f'./{file_name}_small.json', 'w') as f:
-	for review in final_data:
+output = random.sample(data, 75000)
+print(len(output))
+with open(f'./Electronics_5_small.json', 'w') as f:
+	for review in output:
 		f.write(json.dumps(review)+'\n')
